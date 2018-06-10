@@ -1,0 +1,26 @@
+<div class="container">
+    <section id="page-name">
+        <h1>Eat-Da-Burger</h1>
+    </section>
+
+    <section class="row">
+        <div class="col-md-7 col-left">
+            <table>
+                {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block}} {{/unless}} {{/each}}
+            </table>
+        </div>
+        <div class="col-md-5 col-right">
+            {{#each burgers}} {{#if devoured}}
+            <div>{{id}}. {{burger_name}}</div>
+            {{/if}} {{/each}}
+        </div>
+    </section>
+
+    <form class="create-form">
+        <div class="form-group">
+            <label for="name"></label>
+            <textarea id="name" name="burger-name" rows="2" cols="40" placeholder="What type of burger would you like?"></textarea>
+        </div>
+        <button type="submit">Order Burger</button>
+    </form>
+</div>
